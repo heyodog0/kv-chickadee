@@ -12,13 +12,9 @@ extraction needs MATLAB + cluster (one-time, done). Every run is logged in `RESU
 
 Run: `python analyze_forward.py` (numpy, scipy, scikit-learn).
 
-## Legacy (earlier KV-thesis exploration; kept for history, don't use — wrong event window)
-- `extract_barcodes.py` — first single-session extraction.
-- `multi_session.py` — v1 multi-session (place-contaminated).
-- `multi_session_v2.py` — v2, events from `seedChanges` (still wrong window).
-- `barcode_isolated.py` — tried subtracting a place field (made overlap worse).
-- `event_specificity.py` — earlier co-located test, pre-faithful-extraction.
-- `analyze_crosstalk.py` — tested the ρ√N crosstalk law (not supported; abandoned).
+## Cluster job wrapper
+- `run_extract.sh` — Slurm script that runs `extract_events.m` on FASRC.
 
-## Cluster job wrappers
-- `run_extract.sh`, `run_es.sh`, `run_iso.sh` — Slurm scripts that ran the above on FASRC.
+## archive/
+Abandoned KV-thesis exploration (wrong event window; superseded). Kept for history, don't use —
+see `archive/README.md`.

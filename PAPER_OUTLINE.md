@@ -13,11 +13,11 @@
 
 ## Repo status
 Done: extraction (`extract_events.m`) → `events/`; event-specific reactivation + co-located null + ceiling + controls (`analyze_forward.py`); SNR check (`analyze_specificity_snr.py`); distance-curve figure (`analyze_events.py`).
-Legacy (prune): `barcode_isolated.py`, `multi_session*.py`, `event_specificity.py`, `extract_barcodes.py`, `analyze_crosstalk.py`.
+Archived: earlier KV-thesis exploration moved to `analysis/archive/`.
 
 ## Checklist
 - [ ] Figures: ceiling-vs-retrieval bracket; per-bird + CI + prevalence.
 - [ ] Draft Methods → Intro/Results/Discussion.
 - [ ] One owned extension (decoding read / per-bird / load-order).
 - [x] Check-reactivation test — cue-triggered (checks reactivate), `analyze_checks.py`.
-- [ ] Prune legacy; verify refs; format for arXiv.
+- [ ] Verify refs; format for arXiv.
