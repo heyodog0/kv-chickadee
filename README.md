@@ -27,8 +27,3 @@ that the original paper and the Fang et al. 2026 model both skip. Not a discover
 ## Data
 Chettih et al. 2024, Dryad `doi:10.5061/dryad.7h44j101z` (CC0). Raw 38 GB not in repo; the
 extracted per-event vectors in `events/` (112 MB) are all the analysis needs.
-
-## Caveats
-Soft, between-bird-heterogeneous null; the split-half ceiling is temporally adjacent; the check
-result is place-controlled but can't fully separate a shared site-manipulation state from the
-barcode. Honest workshop/arXiv altitude — not novel.
