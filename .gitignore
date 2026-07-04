@@ -7,3 +7,5 @@ __pycache__/
 # stray scratch files
 scratchpad_probe.py
 analysis/fetch_mb_test.py
+# generated analysis outputs (regenerate by running the scripts)
+out/

@@ -21,10 +21,13 @@ import scipy.io as sio
 from scipy.stats import wilcoxon, pearsonr
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
 
-EV  = "/n/netscratch/gershman_lab/Everyone/truong/chickadee_barcode/events"
-OUT = "/n/netscratch/gershman_lab/Everyone/truong/chickadee_barcode/out"
+HERE = os.path.dirname(os.path.abspath(__file__))
+EV  = os.environ.get("EVENTS_DIR", os.path.join(HERE, "..", "events"))   # repo-local events/ (laptop); override with EVENTS_DIR on the cluster
+OUT = os.environ.get("OUT_DIR", os.path.join(HERE, "..", "out"))
 os.makedirs(OUT, exist_ok=True)
-FILES = sorted(glob.glob(EV + "/*.mat"))
+FILES = sorted(glob.glob(os.path.join(EV, "*.mat")))
+if not FILES:
+    raise SystemExit(f"No events/*.mat in {EV}. Put the events/ folder at the repo root, or set EVENTS_DIR.")
 
 def corr(x, y):
     x = x - x.mean(); y = y - y.mean()

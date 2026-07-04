@@ -26,9 +26,13 @@ import numpy as np
 import scipy.io as sio
 from scipy.stats import wilcoxon, pearsonr
 
-EV  = "/n/netscratch/gershman_lab/Everyone/truong/chickadee_barcode/events"
-OUT = "/n/netscratch/gershman_lab/Everyone/truong/chickadee_barcode/out"
-FILES = sorted(glob.glob(EV + "/*.mat"))
+HERE = os.path.dirname(os.path.abspath(__file__))
+EV  = os.environ.get("EVENTS_DIR", os.path.join(HERE, "..", "events"))   # repo-local events/ (laptop); override with EVENTS_DIR on the cluster
+OUT = os.environ.get("OUT_DIR", os.path.join(HERE, "..", "out"))
+os.makedirs(OUT, exist_ok=True)
+FILES = sorted(glob.glob(os.path.join(EV, "*.mat")))
+if not FILES:
+    raise SystemExit(f"No events/*.mat in {EV}. Put the events/ folder at the repo root, or set EVENTS_DIR.")
 
 def corr(x, y):
     x = x - x.mean(); y = y - y.mean()
