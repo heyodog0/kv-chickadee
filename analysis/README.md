@@ -8,6 +8,7 @@ extraction needs MATLAB + cluster (one-time, done). Every run is logged in `RESU
 - `analyze_events.py` — positive control: cache–retrieval correlation vs inter-site distance.
 - `analyze_forward.py` — **main result**: event-specificity + split-half ceiling + per-bird + controls.
 - `analyze_specificity_snr.py` — SNR robustness: raw vs whitened vs PC-residual readouts.
+- `analyze_checks.py` — cue-triggered read: do checks reactivate the barcode (vs a visit place baseline)?
 
 Run: `python analyze_forward.py` (numpy, scipy, scikit-learn).
 
